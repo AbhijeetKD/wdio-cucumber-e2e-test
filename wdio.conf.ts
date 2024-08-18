@@ -96,7 +96,7 @@ export const config: Options.Testrunner = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-   baseUrl: 'https://the-internet.herokuapp.com',
+   baseUrl: 'http://localhost',
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,
@@ -135,7 +135,7 @@ export const config: Options.Testrunner = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
-  reporters: ["spec"],
+  reporters: [['allure', {outputDir: 'allure-results'}]],
 
   // If you are using Cucumber you need to specify the location of your step definitions.
   cucumberOpts: {
@@ -158,9 +158,9 @@ export const config: Options.Testrunner = {
     // <boolean> fail if there are any undefined or pending steps
     strict: false,
     // <string> (expression) only execute the features or scenarios with tags matching the expression
-    tagExpression: "@demo",
+    tagExpression: "",
     // <number> timeout for step definitions
-    timeout: 60000,
+    timeout: 300000,
     // <boolean> Enable this config to treat undefined definitions as warnings.
     ignoreUndefinedDefinitions: false,
   },
